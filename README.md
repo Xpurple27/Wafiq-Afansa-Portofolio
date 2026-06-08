@@ -1,75 +1,33 @@
-# React + TypeScript + Vite
+# 🌌 Premium Dark Portfolio - Muhammad Wafiq Afansa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-19-blue?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
 
-Currently, two official plugins are available:
+Sebuah platform web portofolio profesional berbasis **Full-Stack Frontend Architecture** yang dirancang khusus untuk memetakan dan mengintegrasikan rekam jejak multidisplin saya di bidang **Teknologi (Development)**, **Edukasi (Matematika & UTBK)**, dan **Manajemen Strategis (Kepramukaan & Event Organizer)**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Website ini mengusung tema premium *Dark Mode* yang ergonomis bagi mata rekruter, dilengkapi dengan sistem navigasi *smooth scrolling*, antarmuka berbasis peran (*role-based tabbed interface*), serta tautan bukti fisik yang terintegrasi secara dinamis.
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🛠️ Tech Stack & Arsitektur
 
-Note: This will impact Vite dev & build performances.
+Aplikasi ini dibangun menggunakan ekosistem teknologi modern dengan performa tinggi:
 
-## Expanding the ESLint configuration
+* **Frontend Library:** [React 19](https://react.dev/) (Memanfaatkan **React Compiler** terbaru untuk optimalisasi performa rendering otomatis tanpa *overhead* manual).
+* **Language:** [TypeScript](https://www.typescriptlang.org/) (Menjamin keamanan tipe data/*type safety* dan skalabilitas kode jangka panjang).
+* **Styling Engine:** [Tailwind CSS v4](https://tailwindcss.com/) (Menggunakan konfigurasi berbasis CSS `@theme directive` untuk performa kompilasi super cepat).
+* **Build Tool:** [Vite](https://vite.dev/) (Menyediakan *Hot Module Replacement* yang instan selama masa pengembangan).
+* **Iconography:** [Lucide React](https://lucide.dev/) (Aset ikon berbasis vektor yang konsisten dan bersih).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✨ Fitur Unggulan UI/UX
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1.  **Premium Dark Aesthetic:** Dirancang menggunakan palet warna `Slate-950` dan aksen `Brand Teal` untuk menciptakan impresi visual yang elegan dan fokus pada keterbacaan data (*high contrast readability*).
+2.  **Role-Based Tab System:** Memisahkan tiga pilar karir (Edukasi, Leadership, dan Tech) menggunakan penanganan *state* interaktif, memungkinkan pengunjung memfilter data rekam jejak secara instan tanpa memuat ulang halaman.
+3.  **UX-Driven Evidence Mapping:** Setiap kartu pengalaman kerja dilengkapi dengan tombol aksi (*call-to-action*) yang terhubung langsung ke galeri bukti fisik menggunakan *smooth scroll routing*.
+4.  **Mathematical Logic & Easter Egg:** Menyisipkan humor fungsional khas *software engineer* berupa modul simulasi manipulasi DOM "Antigravity" di bagian kaki halaman (*footer*) sebagai representasi ketertarikan pada logika Python.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
