@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+@theme {
+  --color-brand-navy: #1E3A8A;
+  --color-brand-teal: #0D9488;
+  --font-sans: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
