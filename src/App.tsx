@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import { BookOpen, Code, Tent, ChevronRight, Rocket, Image as ImageIcon, ExternalLink, Award, FileSpreadsheet, ArrowDownCircle } from 'lucide-react';
 
+// 1. IMPORT SEMUA ASLI FOTO KAMU DI SINI
+import fotoProfil from './assets/foto-wafiq.jpg';
+import imgMatematika from './assets/bukti-matematika.jpg';
+import imgSpark from './assets/bukti-spark.jpg';
+import imgTunong from './assets/bukti-tunong.jpg';
+
 function App() {
   const [activeTab, setActiveTab] = useState('pendidik');
 
-  // Struktur Data dengan Link Bukti Fisik
+  // 2. DATA PORTOFOLIO (Target diarahkan ke ID galeri spesifik #galeri-xxx)
   const portfolioData = {
     pendidik: [
       {
@@ -17,18 +23,18 @@ function App() {
           "Menjadi representasi lembaga dalam ekspansi program."
         ],
         evidenceLabel: "Lihat Modul & Dokumentasi",
-        evidenceTarget: "#gallery"
+        evidenceTarget: "#galeri-matematika" // Mengarah langsung ke foto matematika
       },
       {
         title: "Tutor Privat Elite & Olimpiade",
         place: "Independent Educator",
         period: "2024 - Sekarang",
-        desc: "Membina tim Olimpiade Matematika SMPN 7 (2025) dan mengajar siswa top-tier (MAN IC Serpong, SMAN 10).",
+        desc: "Membina tim Olimpiade Matematika SMPN 7 (2025) dan mengajar siswa top-tier (MAN IC Serpong, SMAN 10 Modal Bangsa).",
         highlights: [
           "Sukses meloloskan 2 siswa (Rafa & Rayyan) ke tingkat Provinsi.",
         ],
         evidenceLabel: "Lihat Bukti Kelulusan Siswa",
-        evidenceTarget: "#gallery"
+        evidenceTarget: "#galeri-matematika"
       },
       {
         title: "Asisten Laboratorium Matematika",
@@ -49,7 +55,7 @@ function App() {
           "Mengelola legalitas proposal, relasi instansi, hingga eksekusi teknis lapangan."
         ],
         evidenceLabel: "Lihat Dokumentasi SPARK",
-        evidenceTarget: "#gallery"
+        evidenceTarget: "#galeri-pramuka" // Mengarah langsung ke foto pramuka
       },
       {
         title: "Pembina Utama & Manajer Operasional",
@@ -61,7 +67,7 @@ function App() {
           "Membawa tim juara pada K2M Tingkat MTs (2023)."
         ],
         evidenceLabel: "Lihat Trofi & Piagam",
-        evidenceTarget: "#gallery"
+        evidenceTarget: "#galeri-pramuka"
       }
     ],
     developer: [
@@ -71,8 +77,8 @@ function App() {
         period: "2025 - Sekarang",
         desc: "Membangun platform digital perusahaan untuk pemberdayaan SDM masyarakat dengan antarmuka modern.",
         highlights: [],
-        evidenceLabel: "Kunjungi Web Tunong Baroh",
-        evidenceTarget: "#gallery" // Bisa diganti URL asli nantinya
+        evidenceLabel: "Lihat Bukti Web Tunong Baroh",
+        evidenceTarget: "#galeri-developer" // Mengarah langsung ke foto web dev
       },
       {
         title: "Creator & Lead Developer",
@@ -81,7 +87,7 @@ function App() {
         desc: "Website Edukasi Privat (Tryout Apps) dan Aplikasi Keuangan/Asisten Pribadi.",
         highlights: [],
         evidenceLabel: "Lihat UI Prototype",
-        evidenceTarget: "#gallery"
+        evidenceTarget: "#galeri-developer"
       },
       {
         title: "Software Engineer (Excel Advanced Logic)",
@@ -90,7 +96,7 @@ function App() {
         desc: "Mengembangkan Aplikasi Excel Interaktif untuk Simulasi Pembagian Waris di Aceh dengan algoritma Macro.",
         highlights: [],
         evidenceLabel: "Lihat Cuplikan Aplikasi",
-        evidenceTarget: "#gallery"
+        evidenceTarget: "#galeri-developer"
       }
     ]
   };
@@ -101,6 +107,31 @@ function App() {
     { name: "Excel Skills for Business", issuer: "Macquarie University", link: "https://coursera.org/share/a99f2efae310b5750f01ced73893fc78" }
   ];
 
+  // 3. MAPPING DATA GALERI DENGAN FOTO ASLI YANG SUDAH DI-IMPORT
+  const galleryData = [
+    {
+      id: "galeri-pramuka",
+      title: "Manajemen Event & Piala Pramuka",
+      category: "Leadership",
+      imgUrl: imgSpark, // Menggunakan file asli
+      desc: "Dokumentasi trofi juara umum serta kepanitiaan inti SPARK Scouting Competition & MARSSAL."
+    },
+    {
+      id: "galeri-developer",
+      title: "Pengembangan Website & Software",
+      category: "Web Dev",
+      imgUrl: imgTunong, // Menggunakan file asli
+      desc: "Antarmuka platform tunongbaroh.fun dan purwarupa sistem Tryout CBT untuk siswa privat."
+    },
+    {
+      id: "galeri-matematika",
+      title: "Aktivitas Edukasi & Modul UTBK",
+      category: "Edukasi",
+      imgUrl: imgMatematika, // Menggunakan file asli
+      desc: "Penyusunan bank soal matematika kreatif, bimbingan olimpiade SMP 7, dan arsip asistensi laboratorium USK."
+    }
+  ];
+
   const triggerAntigravity = () => {
     document.body.style.transition = "transform 3s ease-in-out";
     document.body.style.transform = "translateY(-100vh) rotate(5deg)";
@@ -108,10 +139,9 @@ function App() {
   };
 
   return (
-    // DARK MODE WRAPPER: bg-slate-950 (Sangat gelap), text-slate-300 (Abu terang)
     <div className="bg-slate-950 text-slate-300 antialiased min-h-screen font-sans overflow-x-hidden selection:bg-brand-teal selection:text-white">
 
-      {/* Navigation (Dark UI) */}
+      {/* Navigation */}
       <nav className="bg-slate-950/80 backdrop-blur-md shadow-md fixed w-full z-50 top-0 border-b border-slate-800">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#" className="text-2xl font-extrabold text-white tracking-tight">
@@ -137,7 +167,7 @@ function App() {
               Halo, Saya <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-blue-500">Muhammad Wafiq Afansa</span>
             </h1>
             <p className="text-lg text-slate-400 leading-relaxed max-w-lg">
-              Profesional multidisciplinary yang memadukan logika matematis, rekayasa perangkat lunak, dan manajemen strategis dalam mengembangkan sumber daya manusia.
+              Profesional multidisciplinary yang memadukan logika matematis, kapabilitas rekayasa perangkat lunak, dan manajemen strategis dalam mengembangkan sumber daya manusia.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <a href="mailto:afansa27@gmail.com" className="bg-brand-teal text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-teal-600 transition shadow-[0_0_15px_rgba(13,148,136,0.4)] flex items-center gap-2">
@@ -151,8 +181,9 @@ function App() {
 
           <div className="md:w-5/12 relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-teal/30 to-blue-600/30 rounded-full blur-3xl scale-110"></div>
-            <div className="bg-slate-800 p-3 rounded-full relative z-10 shadow-2xl border border-slate-700">
-              <img src="https://via.placeholder.com/500x500" alt="Wafiq Afansa" className="object-cover w-full h-full rounded-full aspect-square opacity-90 hover:opacity-100 transition" />
+            <div className="bg-white p-1 rounded-full relative z-10 shadow-2xl border border-slate-700">
+              {/* MENGGUNAKAN FOTO PROFIL ASLI KAMU */}
+              <img src={fotoProfil} alt="Wafiq Afansa" className="object-cover w-full h-full rounded-full aspect-square opacity-95 hover:opacity-100 transition duration-300" />
             </div>
           </div>
         </div>
@@ -202,7 +233,6 @@ function App() {
                   </ul>
                 )}
 
-                {/* TOMBOL LINK BUKTI */}
                 {item.evidenceTarget && (
                   <a href={item.evidenceTarget} className="inline-flex items-center gap-2 text-sm font-bold text-brand-teal hover:text-white bg-slate-900/50 hover:bg-brand-teal px-4 py-2 rounded-lg transition-colors">
                     <ArrowDownCircle size={16} /> {item.evidenceLabel}
@@ -214,13 +244,34 @@ function App() {
         </div>
       </section>
 
-      {/* Placeholder Galeri untuk Bukti */}
+      {/* 4. SEKSI GALERI AKTIF & TERKONEKSI DENGAN ID SPESIFIK */}
       <section id="gallery" className="py-20 bg-slate-950 px-6">
-        <div className="max-w-5xl mx-auto text-center border border-dashed border-slate-700 rounded-2xl py-20 bg-slate-900/20">
-          <ImageIcon className="mx-auto text-slate-500 mb-4" size={48} />
-          <h3 className="text-2xl font-bold text-white mb-2">Area Galeri & Bukti Fisik</h3>
-          <p className="text-slate-400 mb-6">Di sinilah nanti foto modul, trofi pramuka, dan screenshot website akan ditampilkan.</p>
-          <p className="text-sm text-brand-teal italic">"Klik tombol bukti pada pengalaman di atas akan meluncur langsung ke kotak ini."</p>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-3 flex items-center justify-center gap-2">
+              <ImageIcon className="text-brand-teal" size={28} /> Galeri & Bukti Fisik
+            </h2>
+            <p className="text-slate-400">Verifikasi visual proyek, rekam jejak mengajar, dan arsip dokumentasi kompetisi.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {galleryData.map((item, index) => (
+              <div id={item.id} key={index} className="bg-slate-900 rounded-2xl overflow-hidden shadow-md border border-slate-800 group hover:border-brand-teal/40 transition-all duration-300 scroll-mt-24">
+                <div className="relative overflow-hidden aspect-video bg-slate-950">
+                  <img src={item.imgUrl} alt={item.title} className="object-cover w-full h-full opacity-85 group-hover:opacity-100 group-hover:scale-105 transition duration-500" />
+                  <span className="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-xs text-brand-teal text-xs font-bold px-2.5 py-1 rounded-md border border-slate-800">
+                    {item.category}
+                  </span>
+                </div>
+                <div className="p-5">
+                  <h4 className="font-bold text-white text-lg mb-2 flex items-center justify-between">
+                    {item.title} <ExternalLink size={14} className="text-slate-500 group-hover:text-brand-teal transition" />
+                  </h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
