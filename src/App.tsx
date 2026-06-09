@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import { BookOpen, Code, Tent, ChevronRight, Rocket, Image as ImageIcon, ExternalLink, Award, FileSpreadsheet, ArrowDownCircle } from 'lucide-react';
 
-// 1. IMPORT SEMUA ASLI FOTO KAMU DI SINI
-import fotoProfil from './assets/foto-wafiq.jpg';
-import imgMatematika from './assets/bukti-matematika.jpg';
-import imgSpark from './assets/bukti-spark.jpg';
-import imgTunong from './assets/bukti-tunong.jpg';
+import fotoProfil from './assets/profile.png';
+import imgTunong from './assets/tunong baroh.png';
+import imgFajarHarapan from './assets/FAJARHARAPAN.png';
+import imgSma11 from './assets/SMA11.png';
+import imgOsnMtk from './assets/PERSIAPAN OSN MTK.png';
+import imgJantho from './assets/jantho 2018.png';
+import imgMataIe from './assets/mata ie 2020.png';
+import imgK2M from './assets/K2M.png';
+import imgPersami from './assets/persami pramuka.png';
 
 function App() {
   const [activeTab, setActiveTab] = useState('pendidik');
 
-  // 2. DATA PORTOFOLIO (Target diarahkan ke ID galeri spesifik #galeri-xxx)
   const portfolioData = {
     pendidik: [
       {
@@ -23,7 +26,7 @@ function App() {
           "Menjadi representasi lembaga dalam ekspansi program."
         ],
         evidenceLabel: "Lihat Modul & Dokumentasi",
-        evidenceTarget: "#galeri-matematika" // Mengarah langsung ke foto matematika
+        evidenceTarget: "#galeri-matematika"
       },
       {
         title: "Tutor Privat Elite & Olimpiade",
@@ -55,7 +58,7 @@ function App() {
           "Mengelola legalitas proposal, relasi instansi, hingga eksekusi teknis lapangan."
         ],
         evidenceLabel: "Lihat Dokumentasi SPARK",
-        evidenceTarget: "#galeri-pramuka" // Mengarah langsung ke foto pramuka
+        evidenceTarget: "#galeri-pramuka"
       },
       {
         title: "Pembina Utama & Manajer Operasional",
@@ -78,7 +81,7 @@ function App() {
         desc: "Membangun platform digital perusahaan untuk pemberdayaan SDM masyarakat dengan antarmuka modern.",
         highlights: [],
         evidenceLabel: "Lihat Bukti Web Tunong Baroh",
-        evidenceTarget: "#galeri-developer" // Mengarah langsung ke foto web dev
+        evidenceTarget: "#galeri-developer"
       },
       {
         title: "Creator & Lead Developer",
@@ -107,28 +110,62 @@ function App() {
     { name: "Excel Skills for Business", issuer: "Macquarie University", link: "https://coursera.org/share/a99f2efae310b5750f01ced73893fc78" }
   ];
 
-  // 3. MAPPING DATA GALERI DENGAN FOTO ASLI YANG SUDAH DI-IMPORT
   const galleryData = [
     {
-      id: "galeri-pramuka",
-      title: "Manajemen Event & Piala Pramuka",
-      category: "Leadership",
-      imgUrl: imgSpark, // Menggunakan file asli
-      desc: "Dokumentasi trofi juara umum serta kepanitiaan inti SPARK Scouting Competition & MARSSAL."
-    },
-    {
       id: "galeri-developer",
-      title: "Pengembangan Website & Software",
+      title: "Website Perusahaan - Tunong Baroh",
       category: "Web Dev",
-      imgUrl: imgTunong, // Menggunakan file asli
-      desc: "Antarmuka platform tunongbaroh.fun dan purwarupa sistem Tryout CBT untuk siswa privat."
+      imgUrl: imgTunong,
+      desc: "Antarmuka platform tunongbaroh.fun yang dirancang responsif untuk digitalisasi layanan pengembangan SDM masyarakat."
     },
     {
       id: "galeri-matematika",
-      title: "Aktivitas Edukasi & Modul UTBK",
+      title: "Kelas Intensif SMAN 10 Fajar Harapan",
       category: "Edukasi",
-      imgUrl: imgMatematika, // Menggunakan file asli
-      desc: "Penyusunan bank soal matematika kreatif, bimbingan olimpiade SMP 7, dan arsip asistensi laboratorium USK."
+      imgUrl: imgFajarHarapan,
+      desc: "Dokumentasi bimbingan matematika privat elite untuk siswa dari sekolah unggulan."
+    },
+    {
+      id: "galeri-matematika",
+      title: "Pendampingan Akademik SMAN 11",
+      category: "Edukasi",
+      imgUrl: imgSma11,
+      desc: "Proses pengajaran matematika adaptif tingkat SMA untuk eskalasi pemahaman konseptual siswa."
+    },
+    {
+      id: "galeri-matematika",
+      title: "Pembinaan Kompetisi Sains (OSN) Matematika",
+      category: "Edukasi",
+      imgUrl: imgOsnMtk,
+      desc: "Penyusunan materi logika tingkat lanjut untuk persiapan kompetisi olimpiade matematika siswa."
+    },
+    {
+      id: "galeri-pramuka",
+      title: "Kemenangan Terbaik I Putri - Jantho",
+      category: "Leadership",
+      imgUrl: imgJantho,
+      desc: "Momen penganugerahan Juara Umum 1 Putri pada Kompetisi Penggalang Kwarcab Kota Banda Aceh di Jantho."
+    },
+    {
+      id: "galeri-pramuka",
+      title: "Kompetisi TVRI Aceh - Mata Ie",
+      category: "Leadership",
+      imgUrl: imgMataIe,
+      desc: "Manajemen kontingen pasukan penggalang pada Lomba Pramuka TVRI Aceh di Lapangan Mata Ie."
+    },
+    {
+      id: "galeri-pramuka",
+      title: "Seni Pionering & Ketangkasan K2M",
+      category: "Leadership",
+      imgUrl: imgK2M,
+      desc: "Dokumentasi tim pramuka MTsN Model saat meraih juara pada cabang pionering Kompetisi Keterampilan Madrasah."
+    },
+    {
+      id: "galeri-pramuka",
+      title: "Pelaksanaan PERSAMI Internal",
+      category: "Leadership",
+      imgUrl: imgPersami,
+      desc: "Tata kelola operasional lapangan dan pembentukan karakter kedisiplinan siswa pada agenda Perkemahan Sabtu-Minggu berkala."
     }
   ];
 
@@ -141,7 +178,6 @@ function App() {
   return (
     <div className="bg-slate-950 text-slate-300 antialiased min-h-screen font-sans overflow-x-hidden selection:bg-brand-teal selection:text-white">
 
-      {/* Navigation */}
       <nav className="bg-slate-950/80 backdrop-blur-md shadow-md fixed w-full z-50 top-0 border-b border-slate-800">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#" className="text-2xl font-extrabold text-white tracking-tight">
@@ -156,7 +192,6 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section id="about" className="pt-32 pb-16 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2 space-y-6">
@@ -182,14 +217,12 @@ function App() {
           <div className="md:w-5/12 relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-teal/30 to-blue-600/30 rounded-full blur-3xl scale-110"></div>
             <div className="bg-white p-1 rounded-full relative z-10 shadow-2xl border border-slate-700">
-              {/* MENGGUNAKAN FOTO PROFIL ASLI KAMU */}
               <img src={fotoProfil} alt="Wafiq Afansa" className="object-cover w-full h-full rounded-full aspect-square opacity-95 hover:opacity-100 transition duration-300" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Experience Section */}
       <section id="portfolio" className="py-20 bg-slate-900 px-6 border-y border-slate-800">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -244,7 +277,6 @@ function App() {
         </div>
       </section>
 
-      {/* 4. SEKSI GALERI AKTIF & TERKONEKSI DENGAN ID SPESIFIK */}
       <section id="gallery" className="py-20 bg-slate-950 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -275,7 +307,6 @@ function App() {
         </div>
       </section>
 
-      {/* Certifications Section */}
       <section id="certs" className="py-20 bg-slate-900 px-6 border-t border-slate-800">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -298,7 +329,6 @@ function App() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-10 text-center relative border-t border-slate-800">
         <p className="text-sm mb-4">© 2026 Muhammad Wafiq Afansa. Developed with React & Tailwind.</p>
         <button onClick={triggerAntigravity} className="text-slate-600 hover:text-brand-teal transition flex items-center justify-center gap-2 mx-auto text-xs" title="import antigravity">
